@@ -3,11 +3,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        
         System.out.print("Введіть n: ");
         int n = scanner.nextInt();
+        scanner.close();
 
-        int maxPrime = -1;
+        int maxPrimeNumber = -1;
         int maxOnesCount = -1;
 
         for (int i = 2; i <= n; i++) {
@@ -18,13 +18,13 @@ public class Main {
 
                 if (onesCount > maxOnesCount) {
                     maxOnesCount = onesCount;
-                    maxPrime = i;
+                    maxPrimeNumber = i;
                 }
             }
         }
 
-        if (maxPrime != -1) {
-            System.out.println("Знайдене число: " + maxPrime + "-" + Integer.toBinaryString(maxPrime));
+        if (maxPrimeNumber != -1) {
+            System.out.println("Знайдене число: " + maxPrimeNumber + " - " + Integer.toBinaryString(maxPrimeNumber));
             System.out.println("Кількість одиниць: " + maxOnesCount);
         } else {
             System.out.println("Простих чисел немає");
